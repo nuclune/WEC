@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<instrumentationManifest xsi:schemaLocation="http://schemas.microsoft.com/win/2004/08/events eventman.xsd" xmlns="http://schemas.microsoft.com/win/2004/08/events" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:trace="http://schemas.microsoft.com/win/2004/08/events/trace">
+	<instrumentation>
+		<events>
+			<provider name="CCTTSMS" guid="{2CD11903-526E-441D-9639-81ECD9F7FE9B}" symbol="CCTTSMS_EVENTS" resourceFileName="C:\Windows\system32\ccttsmsEventChannels.dll" messageFileName="c:\Windows\system32\ccttsmsEventChannels.dll">
+				<events>
+					<event symbol="DUMMY_EVENT" value="100" version="0" template="DUMMY_TEMPLATE" message="$(string.Custom Forwarded Events.event.100.message)"></event>
+				</events>
+				<channels>
+					<importChannel name="System" chid="C1"></importChannel>
+					<channel name="CCTTSMS-Application" chid="CCTTSMS-Application" symbol="CCTTSMS_Application" type="Operational" enabled="true"></channel>
+					<channel name="CCTTSMS-Security" chid="CCTTSMS-Security" symbol="CCTTSMS_Security" type="Operational" enabled="true"></channel>
+					<channel name="CCTTSMS-Setup" chid="CCTTSMS-Setup" symbol="CCTTSMS_Setup" type="Operational" enabled="true"></channel>
+					<channel name="CCTTSMS-System" chid="CCTTSMS-System" symbol="CCTTSMS_System" type="Operational" enabled="true"></channel>
+				</channels>
+				<templates>
+					<template tid="DUMMY_TEMPLATE">
+						<data name="Prop_UnicodeString" inType="win:UnicodeString" outType="xs:string"></data>
+						<data name="PropUInt32" inType="win:UInt32" outType="xs:unsignedInt"></data>
+					</template>
+				</templates>
+			</provider>
+			<provider name="CCTTSQLX3" guid="{50C62A8E-3255-4AE5-BFB1-A487846A1442}" symbol="CCTTSQLX3_EVENTS" resourceFileName="C:\Windows\system32\CCTTSQLX3EventChannels.dll" messageFileName="c:\Windows\system32\CCTTSQLX3EventChannels.dll">
+				<events>
+					<event symbol="DUMMY_EVENT" value="100" version="0" template="DUMMY_TEMPLATE" message="$(string.Custom Forwarded Events.event.100.message)"></event>
+				</events>
+				<channels>
+					<importChannel name="System" chid="C2"></importChannel>
+					<channel name="CCTTSQLX3-Applications" chid="CCTTSQLX3-Applications" symbol="CCTTSQLX3_Applications" type="Operational" enabled="true"></channel>
+					<channel name="CCTTSQLX3-Security" chid="CCTTSQLX3-Security" symbol="CCTTSQLX3_Security" type="Operational" enabled="true"></channel>
+					<channel name="CCTTSQLX3-Setup" chid="CCTTSQLX3-Setup" symbol="CCTTSQLX3_Setup" type="Operational" enabled="true"></channel>
+					<channel name="CCTTSQLX3-System" chid="CCTTSQLX3-System" symbol="CCTTSQLX3_System" type="Operational" enabled="true"></channel>
+				</channels>
+				<templates>
+					<template tid="DUMMY_TEMPLATE">
+						<data name="Prop_UnicodeString" inType="win:UnicodeString" outType="xs:string"></data>
+						<data name="PropUInt32" inType="win:UInt32" outType="xs:unsignedInt"></data>
+					</template>
+				</templates>
+			</provider>
+		</events>
+	</instrumentation>
+	<localization>
+		<resources culture="en-US">
+			<stringTable>
+				<string id="level.Informational" value="Information"></string>
+				<string id="channel.System" value="System"></string>
+				<string id="Publisher.EventMessage" value="Prop_UnicodeString=%1;%n&#xA;                  Prop_UInt32=%2;%n"></string>
+				<string id="Custom Forwarded Events.event.100.message" value="Prop_UnicodeString=%1;%n&#xA;                  Prop_UInt32=%2;%n"></string>
+			</stringTable>
+		</resources>
+	</localization>
+</instrumentationManifest>
